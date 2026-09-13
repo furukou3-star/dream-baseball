@@ -12,21 +12,21 @@ a{color:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
 .top{padding:10px 0;text-align:center;background:#f2f4f7;font-weight:800;color:#536076;font-size:13px}
 header{background:#fff}.head{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
 .brand{display:flex;align-items:center;gap:14px}.mark{width:66px;height:66px;border-radius:12px;overflow:hidden;background:#111d32;box-shadow:0 2px 8px #0002}
-.mark img{width:100%;height:100%;object-fit:cover;object-position:54% 20%}
+.mark img{width:100%;height:100%;object-fit:cover;object-position:center}
 .name{font-size:25px;font-weight:900;letter-spacing:.02em}.sub{margin-top:5px;color:#68758b;letter-spacing:.22em;font-size:12px}
 nav{display:flex;gap:34px;font-weight:800}nav a{text-decoration:none}
 .hero{background:var(--navy);color:#fff;padding:58px 0 0}.eyebrow{font-size:14px;letter-spacing:.22em;font-weight:800;color:#d6dce6}
 .hero h1{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:clamp(70px,11vw,128px);line-height:.73;margin:42px 0 44px;letter-spacing:-.06em}
 .hero h1 span{display:block;color:#f43a50;margin-top:28px}.lead{font-size:27px;font-weight:900;margin:0 0 20px}.desc{font-size:17px;line-height:1.9;color:#d8dde6}
 .actions{display:flex;align-items:center;gap:44px;margin:36px 0 46px}.primary{display:inline-block;background:var(--red);padding:20px 34px;font-weight:900;text-decoration:none}.secondary{color:#fff;text-underline-offset:7px}
-.uniform{height:360px;overflow:hidden;background:var(--navy2)}.uniform img{width:100%;height:100%;object-fit:cover;object-position:center 48%}
+.uniform{height:360px;overflow:hidden;background:var(--navy2);position:relative}.uniform img{width:100%;height:100%;object-fit:cover;object-position:center 48%}.uniform:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(10,20,36,.66) 100%)}.uniform-copy{position:absolute;left:max(20px,calc((100% - 1120px)/2 + 20px));bottom:34px;z-index:2;color:#fff}.uniform-en{font-size:14px;letter-spacing:.18em;font-weight:700}.uniform-ja{font-size:24px;margin-top:12px;font-weight:700}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #d9dde5}.stat{padding:30px 0}.stat+ .stat{border-left:1px solid #d9dde5;padding-left:34px}.label{font-size:12px;color:#788398;letter-spacing:.12em}.value{font-size:22px;font-weight:900;margin-top:8px}
 section{padding:70px 0}.sectiontag{color:var(--red);font-weight:900;letter-spacing:.14em;font-size:13px}.sectiontitle{font-size:38px;margin:12px 0 28px}.aboutgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.aboutgrid p{line-height:2;font-size:16px}.facts{margin:0}.facts div{display:grid;grid-template-columns:140px 1fr;padding:14px 0;border-bottom:1px solid #e3e6eb}.facts dt{font-weight:800}.facts dd{margin:0}
 .age{margin-top:26px;padding:22px;background:#f4f6f9}.games{background:#f4f6f9}.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{background:#fff;padding:26px;border:1px solid #e1e5eb}.card h3{margin-top:0}
 footer{background:var(--navy);color:#fff;padding:32px 0}
 @media(max-width:700px){
 .wrap{width:calc(100% - 32px)}.top{padding:8px 0}.head{padding:14px 0}.mark{width:52px;height:52px}.name{font-size:20px}.sub{font-size:10px;letter-spacing:.16em}.head{align-items:flex-start}.brand{gap:10px}nav{position:absolute;top:101px;left:16px;gap:28px;font-size:15px}.head{padding-bottom:62px}
-.hero{padding-top:38px}.eyebrow{font-size:12px}.hero h1{font-size:74px;margin:32px 0 38px}.hero h1 span{margin-top:24px}.lead{font-size:21px;line-height:1.55}.desc{font-size:15px;line-height:1.8}.actions{display:block;margin:28px 0 34px}.primary{padding:17px 24px}.secondary{display:block;margin-top:25px}.uniform{height:240px}
+.hero{padding-top:38px}.eyebrow{font-size:12px}.hero h1{font-size:74px;margin:32px 0 38px}.hero h1 span{margin-top:24px}.lead{font-size:21px;line-height:1.55}.desc{font-size:15px;line-height:1.8}.actions{display:block;margin:28px 0 34px}.primary{padding:17px 24px}.secondary{display:block;margin-top:25px}.uniform{height:240px}.uniform-copy{left:24px;bottom:22px}.uniform-en{font-size:12px}.uniform-ja{font-size:20px;margin-top:10px}
 .stats{grid-template-columns:1fr}.stat,.stat+ .stat{padding:20px 0;border-left:0;border-bottom:1px solid #e0e4ea}.aboutgrid{grid-template-columns:1fr;gap:30px}.cards{grid-template-columns:1fr}section{padding:50px 0}.sectiontitle{font-size:30px}.facts div{grid-template-columns:110px 1fr}
 }
 </style>
@@ -35,7 +35,7 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 <div class="top">ホームページ評価版</div>
 <header><div class="wrap head">
 <div class="brand">
-<div class="mark"><img src="dream-sprite-uniform.png" alt="DSP Dロゴ"></div>
+<div class="mark"><img src="dream-sprite-logo.jpg" alt="ドリームスプライト Dロゴ"></div>
 <div><div class="name">ドリームスプライト</div><div class="sub">KEIHAN LEAGUE BASEBALL</div></div>
 </div>
 <nav><a href="#about">チーム紹介</a><a href="#games">日程・結果</a></nav>
@@ -48,7 +48,13 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 <p class="desc">勝ち負けにこだわらず、野球そのものを楽しむ。<br>大阪・京阪リーグのドリームスプライトです。</p>
 <div class="actions"><a class="primary" href="#about">ドリームってこんなチーム　→</a><a class="secondary" href="#games">日程・試合結果を見る ↗</a></div>
 </div>
-<div class="uniform"><img src="dream-sprite-uniform.png" alt="ドリームスプライトのユニフォームと帽子"></div>
+<div class="uniform">
+  <img src="dream-sprite-uniform.png" alt="ドリームスプライトのユニフォームと帽子">
+  <div class="uniform-copy">
+    <div class="uniform-en">OUR COLORS. OUR TEAM.</div>
+    <div class="uniform-ja">ドリームの色を、これからも。</div>
+  </div>
+</div>
 </div>
 <div class="wrap stats">
 <div class="stat"><div class="label">LEAGUE / 所属</div><div class="value">京阪リーグ</div></div>
