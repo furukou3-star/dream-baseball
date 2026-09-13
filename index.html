@@ -15,8 +15,9 @@ nav{display:flex;gap:44px;margin-top:36px;font-weight:850;font-size:18px}
 .hero-title{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:700;font-size:clamp(64px,11vw,130px);line-height:.78;letter-spacing:-.045em;margin:0 0 52px}.hero-title .dream{display:block;color:white}.hero-title .sprite{display:block;color:var(--red);margin-top:24px}
 .hero-lead{font-size:28px;line-height:1.5;font-weight:900;margin:0 0 24px}.hero-copy{color:#d2d7e0;font-size:18px;margin:0 0 38px}.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
 .primary{display:inline-flex;align-items:center;justify-content:center;min-height:58px;background:var(--red2);color:white;padding:14px 34px;font-weight:900;font-size:19px}.secondary{color:white;text-decoration:underline;text-underline-offset:7px;font-size:17px}
-.visual-card{margin-top:56px;background:#263349;min-height:170px;border:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;color:#dbe1e9;text-align:center;padding:28px}
-.visual-card .mark{width:92px;height:92px;border:5px solid white;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-style:italic;font-size:58px;font-weight:800;margin:0 auto 16px}
+.visual-card{margin-top:56px;background:#263349;border:1px solid rgba(255,255,255,.05);overflow:hidden;position:relative;min-height:280px}
+.visual-card img{display:block;width:100%;height:clamp(280px,45vw,500px);object-fit:cover;object-position:center}
+.visual-caption{position:absolute;left:0;right:0;bottom:0;padding:24px 28px;background:linear-gradient(transparent,rgba(17,29,50,.92));font-weight:900;letter-spacing:.12em;color:white}
 .fact-grid{display:grid;grid-template-columns:repeat(3,1fr)}.fact{padding:34px 0;border-bottom:1px solid var(--line)}.fact+.fact{padding-left:38px;border-left:1px solid var(--line)}.fact small{display:block;color:#687487;font-size:15px;margin-bottom:8px}.fact b{font-size:22px}
 .section{padding-top:72px;padding-bottom:72px}.section-head{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:42px}.section-head h2{font-size:32px;margin:0}.section-head span{font-size:13px;letter-spacing:.18em;color:#6c7686}
 .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.lead{font-size:34px;line-height:1.45;font-weight:900;margin:0 0 28px}.profile{margin:0;border-top:1px solid var(--line)}.profile div{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:17px 0;border-bottom:1px solid var(--line)}.profile dt{font-weight:800;color:#5e6979}.profile dd{margin:0;font-weight:650}.profile .small{font-size:13px;color:#6a7483;font-weight:500}
@@ -26,7 +27,7 @@ nav{display:flex;gap:44px;margin-top:36px;font-weight:850;font-size:18px}
 .wrap{padding:0 22px}.top-note{font-size:14px}.header-inner{padding:44px 0 32px}.brand-name{font-size:22px}.brand-sub{font-size:12px}nav{gap:38px;margin-top:34px;font-size:17px}
 .hero-inner{padding:62px 0 68px}.eyebrow{font-size:14px;margin-bottom:34px}.hero-title{font-size:clamp(78px,22vw,118px);line-height:.76;margin-bottom:50px}.hero-title .sprite{margin-top:24px}
 .hero-lead{font-size:25px}.hero-copy{font-size:17px}.hero-actions{display:block}.primary{width:100%;min-height:64px;font-size:18px}.secondary{display:inline-block;margin-top:28px;font-size:16px}
-.visual-card{min-height:150px;margin-top:54px}.fact-grid{display:block}.fact{padding:22px 0;display:flex;justify-content:space-between;gap:20px;align-items:center}.fact+.fact{padding-left:0;border-left:0}.fact small{margin:0}.fact b{font-size:18px;text-align:right}
+.visual-card{min-height:250px;margin-top:54px}.visual-card img{height:320px}.visual-caption{padding:34px 22px 18px;font-size:14px}.fact-grid{display:block}.fact{padding:22px 0;display:flex;justify-content:space-between;gap:20px;align-items:center}.fact+.fact{padding-left:0;border-left:0}.fact small{margin:0}.fact b{font-size:18px;text-align:right}
 .section{padding-top:56px;padding-bottom:56px}.section-head h2{font-size:28px}.about-grid,.game-grid{grid-template-columns:1fr;gap:36px}.lead{font-size:28px}.profile div{grid-template-columns:112px 1fr}.footer-inner{display:block}.footer a{display:inline-block;margin-top:20px}
 }
 </style>
@@ -41,7 +42,7 @@ nav{display:flex;gap:44px;margin-top:36px;font-weight:850;font-size:18px}
 <p class="hero-lead">一つひとつのプレーを、真剣に楽しむ。</p>
 <p class="hero-copy">勝ち負けにこだわらず、野球そのものを楽しむ。<br>大阪・京阪リーグのドリームスプライトです。</p>
 <div class="hero-actions"><a class="primary" href="#about">ドリームってこんなチーム</a><a class="secondary" href="#games">日程・試合結果を見る ↗</a></div>
-<div class="visual-card"><div><div class="mark">D</div><strong>OUR COLORS. OUR TEAM.</strong></div></div>
+<div class="visual-card"><img src="dream-sprite-uniform.png" alt="ドリームスプライトのユニフォームとキャップ"><div class="visual-caption">OUR COLORS. OUR TEAM.</div></div>
 </div></section>
 <section class="facts"><div class="wrap fact-grid"><div class="fact"><small>LEAGUE / 所属</small><b>京阪リーグ</b></div><div class="fact"><small>AREA / 活動拠点</small><b>大阪・淀川河川敷</b></div><div class="fact"><small>MEMBERS / メンバー</small><b>24名</b></div></div></section>
 <section class="wrap section" id="about"><div class="section-head"><h2>チーム紹介</h2><span>ABOUT US</span></div><div class="about-grid">
