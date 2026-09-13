@@ -101,6 +101,45 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
  .home-results{padding:46px 0}.home-results-head{align-items:flex-start}
 }
 
+
+/* v6 mobile polish: prevent awkward Japanese line breaks */
+@media(max-width:700px){
+  .games-heading{display:block}
+  .games-heading .sectiontitle{white-space:nowrap;font-size:29px;line-height:1.2}
+  .season-record{text-align:left;margin-top:14px}
+  .season-record strong{font-size:28px}
+  .season-record small{display:block;margin-top:4px}
+
+  .home-results .season-summary{
+    grid-template-columns:1fr 1fr;
+  }
+  .home-results .season-summary div:first-child{
+    grid-column:1 / -1;
+    border-right:0;
+    border-bottom:1px solid #ffffff22;
+  }
+  .home-results .season-summary div:nth-child(2){
+    border-right:1px solid #ffffff22;
+  }
+  .home-results .season-summary div:nth-child(3){
+    border-right:0;
+  }
+  .home-results .season-summary div:first-child strong{
+    font-size:27px;
+    white-space:nowrap;
+  }
+
+  .page-hero h1{
+    white-space:nowrap;
+    font-size:33px;
+  }
+
+  .result-list-title{
+    flex-wrap:wrap;
+    row-gap:4px;
+  }
+}
+
 </style>
 </head>
 <body>
