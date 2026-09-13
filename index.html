@@ -29,6 +29,55 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 .hero{padding-top:38px}.eyebrow{font-size:12px}.hero h1{font-size:74px;margin:32px 0 38px}.hero h1 span{margin-top:24px}.lead{font-size:21px;line-height:1.55}.desc{font-size:15px;line-height:1.8}.actions{display:block;margin:28px 0 34px}.primary{padding:17px 24px}.secondary{display:block;margin-top:25px}.uniform{height:240px}.uniform-copy{left:24px;bottom:22px}.uniform-en{font-size:12px}.uniform-ja{font-size:20px;margin-top:10px}
 .stats{grid-template-columns:1fr}.stat,.stat+ .stat{padding:20px 0;border-left:0;border-bottom:1px solid #e0e4ea}.aboutgrid{grid-template-columns:1fr;gap:30px}.cards{grid-template-columns:1fr}section{padding:50px 0}.sectiontitle{font-size:30px}.facts div{grid-template-columns:110px 1fr}
 }
+
+.games{background:#f4f6f9}
+.games-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:26px}
+.games-heading .sectiontitle{margin-bottom:5px}
+.games-intro{margin:0;color:#758096;font-size:14px}
+.season-record{text-align:right;white-space:nowrap}
+.season-record strong{display:block;font-size:34px;letter-spacing:-.03em}
+.season-record strong span{font-size:16px;margin-left:2px;margin-right:8px}
+.season-record small{color:#778297}
+.season-summary{display:grid;grid-template-columns:repeat(3,1fr);background:var(--navy);color:#fff;margin-bottom:22px}
+.season-summary div{padding:22px 24px;border-right:1px solid #ffffff22}
+.season-summary div:last-child{border-right:0}
+.season-summary span{display:block;color:#bcc6d5;font-size:12px;letter-spacing:.12em}
+.season-summary strong{display:block;font-size:30px;margin-top:5px}
+.latest-game{background:#fff;border:1px solid #dfe4eb;padding:26px 28px;margin-bottom:26px;box-shadow:0 8px 24px #1a2a4510}
+.latest-kicker{font-size:11px;letter-spacing:.18em;color:var(--red);font-weight:900;margin-bottom:14px}
+.latest-main{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.latest-main small{display:block;color:#7a8597;margin-bottom:8px}
+.latest-main>div:first-child strong{font-size:24px}
+.latest-score{display:flex;align-items:center;gap:12px}
+.latest-score span{font-size:46px;font-weight:900;line-height:1}
+.latest-score i{font-style:normal;color:#9aa3b0}
+.latest-score b{background:var(--red);color:#fff;font-size:11px;letter-spacing:.12em;padding:7px 9px;margin-left:4px}
+.result-list{background:#fff;border:1px solid #dfe4eb}
+.result-list-title{display:flex;align-items:baseline;gap:12px;padding:18px 22px;border-bottom:1px solid #e3e7ed}
+.result-list-title span{font-size:11px;letter-spacing:.15em;color:#7b8597;font-weight:900}
+.result-list-title strong{font-size:17px}
+.result-row{display:grid;grid-template-columns:120px 1fr 140px;align-items:center;min-height:66px;padding:0 20px;border-bottom:1px solid #edf0f4;position:relative}
+.result-row:last-child{border-bottom:0}
+.result-row:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#b7c0cc}
+.result-row.win:before{background:var(--navy)}
+.result-row.loss:before{background:var(--red)}
+.result-row.draw:before{background:#4b8b42}
+.result-date{font-weight:900;font-size:15px}.result-date small{display:block;color:#7c8798;font-size:11px;font-weight:600;margin-top:3px}
+.result-opponent{font-weight:800}.result-opponent .vs{color:#8b95a4;font-size:11px;letter-spacing:.05em}
+.result-note{display:inline-block;margin-left:10px;padding:3px 6px;background:#eef2f7;color:#41506a;font-size:10px;border-radius:3px;vertical-align:2px}
+.result-score{display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.result-score strong{font-size:22px}.result-score strong span{color:#a0a8b5;margin:0 4px;font-weight:400}
+.result-score b{display:inline-grid;place-items:center;width:28px;height:28px;font-size:12px;color:#fff;background:#8c96a5;border-radius:50%}
+.result-row.win .result-score b{background:var(--navy)}.result-row.loss .result-score b{background:var(--red)}.result-row.draw .result-score b{background:#4b8b42}
+@media(max-width:700px){
+.games-heading{align-items:flex-start}.season-record strong{font-size:27px}.season-record strong span{font-size:13px;margin-right:5px}.season-summary div{padding:17px 14px}.season-summary strong{font-size:24px}
+.latest-game{padding:20px}.latest-main{align-items:flex-end}.latest-main>div:first-child strong{font-size:18px}.latest-score{gap:7px}.latest-score span{font-size:34px}.latest-score b{display:none}
+.result-list{margin-left:-2px;margin-right:-2px}.result-row{grid-template-columns:82px 1fr auto;padding:0 12px;min-height:70px}.result-date{font-size:13px}.result-opponent{font-size:14px;padding-right:8px}.result-note{display:block;width:max-content;margin:5px 0 0}.result-score{gap:6px}.result-score strong{font-size:18px}.result-score b{width:25px;height:25px;font-size:11px}
+}
+
+
+.result-date small em{display:block;font-style:normal;color:#9aa3b0;font-size:10px;margin-top:2px}.official-badge{display:inline-block;margin-left:8px;padding:3px 7px;border:1px solid #e6b800;background:#fff9cf;color:#7a6400;font-size:10px;font-weight:900;border-radius:999px;vertical-align:1px}.result-legend{display:flex;gap:22px;flex-wrap:wrap;margin:-12px 0 18px;color:#69758a;font-size:12px}.result-legend span{display:flex;align-items:center;gap:6px}.official-dot{width:9px;height:9px;border-radius:50%;background:#f0c400;display:inline-block}.result-row.canceled:before{background:#9ba4b2}.result-row.canceled{background:#fafbfc}.result-row.canceled .result-score b{width:auto;height:auto;border-radius:3px;padding:6px 9px;background:#8b95a4}.cancel-note{display:inline-block;margin-left:9px;color:#7a8495;font-size:11px;font-weight:700}@media(max-width:700px){.official-badge{display:block;width:max-content;margin:5px 0 0}.cancel-note{display:block;margin:5px 0 0}.result-legend{gap:8px;margin-top:-10px}.result-legend span{width:100%}}
+
 </style>
 </head>
 <body>
@@ -73,7 +122,174 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 </dl>
 <div class="age"><strong>年代別構成</strong><br>10代 3人 ／ 20代 1人 ／ 30代 4人 ／ 40代 6人 ／ 50代 10人<br><small>2026年9月13日時点 ／ 平均41.7歳</small></div>
 </div></div></div></section>
-<section class="games" id="games"><div class="wrap"><div class="sectiontag">GAMES</div><h2 class="sectiontitle">日程・試合結果</h2><div class="cards"><div class="card"><h3>次の試合</h3><strong>掲載待ち</strong><p>確定した日程・対戦相手・球場を掲載します。</p></div><div class="card"><h3>直近の試合結果</h3><strong>掲載待ち</strong><p>確認済みのスコアと試合結果を掲載します。</p></div></div></div></section>
+
+<section class="games" id="games"><div class="wrap">
+  <div class="sectiontag">2026 SEASON</div>
+  <div class="games-heading">
+    <div><h2 class="sectiontitle">今季の試合結果</h2><p class="games-intro">2026年9月13日時点</p></div>
+    <div class="season-record"><strong>13<span>勝</span> 12<span>敗</span> 2<span>分</span></strong><small>27試合</small></div>
+  </div>
+
+  <div class="result-legend"><span><i class="official-dot"></i> 京阪リーグ公式戦</span><span>※ 2月8日は降雪中止（通算試合数には含まず）</span></div>
+  <div class="season-summary">
+    <div><span>得点</span><strong>173</strong></div>
+    <div><span>失点</span><strong>198</strong></div>
+    <div><span>得失点差</span><strong>−25</strong></div>
+  </div>
+
+  <div class="latest-game">
+    <div class="latest-kicker">LATEST GAME</div>
+    <div class="latest-main">
+      <div><small>9月13日 / 鳥飼②</small><strong>VS ブラックス</strong></div>
+      <div class="latest-score"><span>8</span><i>−</i><span>1</span><b>WIN</b></div>
+    </div>
+  </div>
+
+  <div class="result-list">
+    <div class="result-list-title"><span>ALL RESULTS</span><strong>2026 試合記録</strong></div>
+    <div class="result-row win">
+      <div class="result-date">9月13日<small>鳥飼2</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ブラックス</div>
+      <div class="result-score"><strong>8<span>−</span>1</strong><b>勝</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">9月6日<small>大日</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ゴールド<span class="result-note">MVP 建斗</span></div>
+      <div class="result-score"><strong>11<span>−</span>2</strong><b>勝</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">8月23日<small>鳥飼3</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ラッツ</div>
+      <div class="result-score"><strong>6<span>−</span>11</strong><b>負</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">8月11日<small>今津</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 俺こい</div>
+      <div class="result-score"><strong>5<span>−</span>4</strong><b>勝</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">7月26日<small>木屋元</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ジョーカー</div>
+      <div class="result-score"><strong>2<span>−</span>7</strong><b>負</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">7月19日<small>大日</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ミスターキッズ</div>
+      <div class="result-score"><strong>10<span>−</span>8</strong><b>勝</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">7月12日<small>大日</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ブラックス</div>
+      <div class="result-score"><strong>8<span>−</span>3</strong><b>勝</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">6月14日<small>鳥飼上1</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ラッツ</div>
+      <div class="result-score"><strong>1<span>−</span>9</strong><b>負</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">5月31日<small>大日</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ブラックス</div>
+      <div class="result-score"><strong>10<span>−</span>4</strong><b>勝</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">5月17日<small>太子橋</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> アポロ</div>
+      <div class="result-score"><strong>14<span>−</span>3</strong><b>勝</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">5月10日<small>佐太西</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> シャークス</div>
+      <div class="result-score"><strong>7<span>−</span>6</strong><b>勝</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">4月29日<small>今津A<em>9:00–11:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 俺について来い</div>
+      <div class="result-score"><strong>11<span>−</span>7</strong><b>勝</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">4月26日<small>大日①<em>7:00–9:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 北摂ブラックス</div>
+      <div class="result-score"><strong>8<span>−</span>6</strong><b>勝</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">4月19日<small>大日①<em>13:00–15:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> グランドキャニオン<span class="official-badge">公式戦</span><span class="result-note">MVP 吉本</span></div>
+      <div class="result-score"><strong>5<span>−</span>4</strong><b>勝</b></div>
+    </div>
+    <div class="result-row draw">
+      <div class="result-date">4月12日<small>大日①<em>7:00–9:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ラッツ</div>
+      <div class="result-score"><strong>7<span>−</span>7</strong><b>分</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">4月5日<small>佐太西①<em>13:00–15:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> フェニックス<span class="official-badge">公式戦</span></div>
+      <div class="result-score"><strong>3<span>−</span>9</strong><b>負</b></div>
+    </div>
+    <div class="result-row draw">
+      <div class="result-date">3月29日<small>大日②<em>15:00–17:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> マーベラス<span class="official-badge">公式戦</span></div>
+      <div class="result-score"><strong>9<span>−</span>9</strong><b>分</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">3月15日<small>佐太西②<em>15:00–17:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> クーガーズ<span class="official-badge">公式戦</span></div>
+      <div class="result-score"><strong>7<span>−</span>9</strong><b>負</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">3月8日<small>佐太西②<em>9:00–11:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> OSAKABleake</div>
+      <div class="result-score"><strong>6<span>−</span>5</strong><b>勝</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">3月1日<small>佐太西①<em>7:00–9:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> BlueHips</div>
+      <div class="result-score"><strong>1<span>−</span>11</strong><b>負</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">2月23日<small>今津A<em>11:00–13:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 俺について来い</div>
+      <div class="result-score"><strong>4<span>−</span>12</strong><b>負</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">2月23日<small>今津A<em>9:00–11:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 俺について来い</div>
+      <div class="result-score"><strong>4<span>−</span>17</strong><b>負</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">2月15日<small>寝屋川A②<em>11:15–12:45</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> チーム武<span class="official-badge">公式戦</span></div>
+      <div class="result-score"><strong>0<span>−</span>12</strong><b>負</b></div>
+    </div>
+    <div class="result-row canceled">
+      <div class="result-date">2月8日<small>寝屋川A②<em>11:15–12:45</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ピカロ<span class="cancel-note">降雪中止</span></div>
+      <div class="result-score"><b>中止</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">2月1日<small>寝屋川A②<em>9:30–11:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 野球クラブ<span class="official-badge">公式戦</span></div>
+      <div class="result-score"><strong>1<span>−</span>7</strong><b>負</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">1月25日<small>荒本青少年運動広場<em>9:00–12:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ホーマーズ</div>
+      <div class="result-score"><strong>0<span>−</span>3</strong><b>負</b></div>
+    </div>
+    <div class="result-row loss">
+      <div class="result-date">1月12日<small>大日②<em>9:00–11:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> アベンジャーズ</div>
+      <div class="result-score"><strong>3<span>−</span>18</strong><b>負</b></div>
+    </div>
+    <div class="result-row win">
+      <div class="result-date">1月4日<small>左専道<em>9:00–11:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> SHURAKU</div>
+      <div class="result-score"><strong>22<span>−</span>4</strong><b>勝</b></div>
+    </div>
+  </div>
+</div></section>
+
 </main>
 <footer><div class="wrap"><strong>DREAM SPRITE</strong><br><small>ドリームスプライト / 京阪リーグ</small></div></footer>
 </body></html>
