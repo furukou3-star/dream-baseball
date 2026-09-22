@@ -1,0 +1,16 @@
+{
+  "name": "ドリームスプライト",
+  "short_name": "Dream Sprite",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#111d32",
+  "theme_color": "#111d32",
+  "icons": [
+    {
+      "src": "dream-sprite-logo.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
