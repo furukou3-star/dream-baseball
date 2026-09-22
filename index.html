@@ -95,7 +95,7 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 .home-results .sectiontitle{margin-bottom:0}
 .more-link{font-weight:900;text-underline-offset:5px}
 @media(max-width:700px){
- .site-nav{position:absolute;top:101px;left:16px;gap:24px;font-size:15px}
+ .site-nav{position:absolute;top:76px;left:16px;gap:24px;font-size:15px}
  .page-hero{padding:34px 0}.page-hero h1{font-size:34px}
  .upcoming-card{grid-template-columns:1fr;padding:20px}.upcoming-side{justify-content:flex-start;text-align:left}
  .home-results{padding:46px 0}.home-results-head{align-items:flex-start}
@@ -141,10 +141,24 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 }
 
 .inline-link{display:inline-block;margin-top:6px;font-weight:800;text-underline-offset:4px;color:var(--navy)}
+
+.upcoming-list{background:#fff;border:1px solid #dfe4eb;margin:24px 0 30px}
+.upcoming-list-head{padding:16px 22px;border-bottom:1px solid #e3e7ed;font-size:11px;font-weight:900;letter-spacing:.16em;color:var(--red)}
+.upcoming-row{display:grid;grid-template-columns:110px 130px 1fr;gap:18px;align-items:center;padding:18px 22px;border-bottom:1px solid #edf0f4}
+.upcoming-row:last-child{border-bottom:0}
+.upcoming-date{font-size:18px;font-weight:900}.upcoming-date small{display:block;font-size:11px;color:#7b8698;margin-top:3px}
+.upcoming-place{font-weight:800;color:#536076}
+.upcoming-match strong{display:block;font-size:17px}.upcoming-match small{display:block;color:#7b8698;margin-top:5px}
+@media(max-width:700px){
+ .upcoming-row{grid-template-columns:78px 1fr;gap:6px 12px;padding:16px}
+ .upcoming-place{font-size:13px}
+ .upcoming-match{grid-column:2}
+ .upcoming-match strong{font-size:15px}
+}
+
 </style>
 </head>
 <body>
-<div class="top">ホームページ評価版</div>
 <header><div class="wrap head">
 <div class="brand">
 <div class="mark"><img src="dream-sprite-logo.jpg" alt="ドリームスプライト Dロゴ"></div>
@@ -193,16 +207,35 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
     <a class="more-link" href="results.html">全試合を見る ↗</a>
   </div>
   <div class="season-summary" style="margin-top:24px">
-    <div><span>戦績</span><strong>13勝 12敗 2分</strong></div>
-    <div><span>得点</span><strong>173</strong></div>
+    <div><span>戦績</span><strong>14勝 12敗 2分</strong></div>
+    <div><span>得点</span><strong>180</strong></div>
     <div><span>失点</span><strong>198</strong></div>
   </div>
-  <div class="upcoming-card">
-    <div><div class="kicker">NEXT GAME</div><h3>次戦情報は更新待ち</h3><div class="upcoming-meta">日程・対戦相手が確定次第掲載します。</div></div>
-    <div class="upcoming-side"><div><strong>2026 SEASON</strong><small>戦績は9月13日終了時点</small></div></div>
+  <div class="upcoming-list">
+    <div class="upcoming-list-head">UPCOMING GAMES</div>
+    <div class="upcoming-row">
+      <div class="upcoming-date">10月4日<small>7:00–</small></div>
+      <div class="upcoming-place">大日①</div>
+      <div class="upcoming-match"><strong>練習試合</strong><small>対戦相手未定</small></div>
+    </div>
+    <div class="upcoming-row">
+      <div class="upcoming-date">10月4日<small>11:00–</small></div>
+      <div class="upcoming-place">佐太西①</div>
+      <div class="upcoming-match"><strong>VS フェニックス <span class="official-badge">公式戦</span></strong><small>2026 京阪リーグトーナメント 1回戦</small></div>
+    </div>
+    <div class="upcoming-row">
+      <div class="upcoming-date">10月11日<small>7:00–</small></div>
+      <div class="upcoming-place">鳥飼上①</div>
+      <div class="upcoming-match"><strong>練習試合</strong><small>対戦相手未定</small></div>
+    </div>
   </div>
   <div class="result-list">
     <div class="result-list-title"><span>RECENT RESULTS</span><strong>直近3試合</strong></div>
+    <div class="result-row win">
+      <div class="result-date">9月20日<small>鳥飼上②<em>7:00–9:00</em></small></div>
+      <div class="result-opponent"><span class="vs">VS</span> BlueHips</div>
+      <div class="result-score"><strong>7<span>−</span>0</strong><b>勝</b></div>
+    </div>
     <div class="result-row win">
       <div class="result-date">9月13日<small>鳥飼上②<em>7:00–9:00</em></small></div>
       <div class="result-opponent"><span class="vs">VS</span> 北摂ブラックス</div>
@@ -213,11 +246,7 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
       <div class="result-opponent"><span class="vs">VS</span> ゴールドラッシュ<span class="official-badge">公式戦</span><span class="result-note">MVP 建斗</span></div>
       <div class="result-score"><strong>11<span>−</span>2</strong><b>勝</b></div>
     </div>
-<div class="result-row loss">
-      <div class="result-date">8月23日<small>鳥飼上③<em>7:00–9:00</em></small></div>
-      <div class="result-opponent"><span class="vs">VS</span> ラッツ</div>
-      <div class="result-score"><strong>6<span>−</span>11</strong><b>負</b></div>
-    </div>
+
   </div>
 </div></section>
 
