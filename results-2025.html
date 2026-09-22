@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="京阪リーグ所属の草野球チーム、ドリームスプライト（DSP）公式サイト">
+<title>ドリームスプライト｜京阪リーグ</title>
+<style>
+:root{--navy:#111d32;--navy2:#24344f;--red:#e51f35;--ink:#111d32;--muted:#6d788b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;background:#fff}
+a{color:inherit}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+.top{padding:10px 0;text-align:center;background:#f2f4f7;font-weight:800;color:#536076;font-size:13px}
+header{background:#fff}.head{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.brand{display:flex;align-items:center;gap:14px}.mark{width:66px;height:66px;border-radius:12px;overflow:hidden;background:#111d32;box-shadow:0 2px 8px #0002}
+.mark img{width:100%;height:100%;object-fit:cover;object-position:center}
+.name{font-size:25px;font-weight:900;letter-spacing:.02em}.sub{margin-top:5px;color:#68758b;letter-spacing:.22em;font-size:12px}
+nav{display:flex;gap:34px;font-weight:800}nav a{text-decoration:none}
+.hero{background:var(--navy);color:#fff;padding:58px 0 0}.eyebrow{font-size:14px;letter-spacing:.22em;font-weight:800;color:#d6dce6}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:clamp(70px,11vw,128px);line-height:.73;margin:42px 0 44px;letter-spacing:-.06em}
+.hero h1 span{display:block;color:#f43a50;margin-top:28px}.lead{font-size:27px;font-weight:900;margin:0 0 20px}.desc{font-size:17px;line-height:1.9;color:#d8dde6}
+.actions{display:flex;align-items:center;gap:44px;margin:36px 0 46px}.primary{display:inline-block;background:var(--red);padding:20px 34px;font-weight:900;text-decoration:none}.secondary{color:#fff;text-underline-offset:7px}
+.uniform{height:360px;overflow:hidden;background:var(--navy2);position:relative}.uniform img{width:100%;height:100%;object-fit:cover;object-position:center 48%}.uniform:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(10,20,36,.66) 100%)}.uniform-copy{position:absolute;left:max(20px,calc((100% - 1120px)/2 + 20px));bottom:34px;z-index:2;color:#fff}.uniform-en{font-size:14px;letter-spacing:.18em;font-weight:700}.uniform-ja{font-size:24px;margin-top:12px;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #d9dde5}.stat{padding:30px 0}.stat+ .stat{border-left:1px solid #d9dde5;padding-left:34px}.label{font-size:12px;color:#788398;letter-spacing:.12em}.value{font-size:22px;font-weight:900;margin-top:8px}
+section{padding:70px 0}.sectiontag{color:var(--red);font-weight:900;letter-spacing:.14em;font-size:13px}.sectiontitle{font-size:38px;margin:12px 0 28px}.aboutgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.aboutgrid p{line-height:2;font-size:16px}.facts{margin:0}.facts div{display:grid;grid-template-columns:140px 1fr;padding:14px 0;border-bottom:1px solid #e3e6eb}.facts dt{font-weight:800}.facts dd{margin:0}
+.age{margin-top:26px;padding:22px;background:#f4f6f9}.games{background:#f4f6f9}.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{background:#fff;padding:26px;border:1px solid #e1e5eb}.card h3{margin-top:0}
+footer{background:var(--navy);color:#fff;padding:32px 0}
+@media(max-width:700px){
+.wrap{width:calc(100% - 32px)}.top{padding:8px 0}.head{padding:14px 0}.mark{width:52px;height:52px}.name{font-size:20px}.sub{font-size:10px;letter-spacing:.16em}.head{align-items:flex-start}.brand{gap:10px}nav{position:absolute;top:101px;left:16px;gap:28px;font-size:15px}.head{padding-bottom:62px}
+.hero{padding-top:38px}.eyebrow{font-size:12px}.hero h1{font-size:74px;margin:32px 0 38px}.hero h1 span{margin-top:24px}.lead{font-size:21px;line-height:1.55}.desc{font-size:15px;line-height:1.8}.actions{display:block;margin:28px 0 34px}.primary{padding:17px 24px}.secondary{display:block;margin-top:25px}.uniform{height:240px}.uniform-copy{left:24px;bottom:22px}.uniform-en{font-size:12px}.uniform-ja{font-size:20px;margin-top:10px}
+.stats{grid-template-columns:1fr}.stat,.stat+ .stat{padding:20px 0;border-left:0;border-bottom:1px solid #e0e4ea}.aboutgrid{grid-template-columns:1fr;gap:30px}.cards{grid-template-columns:1fr}section{padding:50px 0}.sectiontitle{font-size:30px}.facts div{grid-template-columns:110px 1fr}
+}
+
+.games{background:#f4f6f9}
+.games-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:26px}
+.games-heading .sectiontitle{margin-bottom:5px}
+.games-intro{margin:0;color:#758096;font-size:14px}
+.season-record{text-align:right;white-space:nowrap}
+.season-record strong{display:block;font-size:34px;letter-spacing:-.03em}
+.season-record strong span{font-size:16px;margin-left:2px;margin-right:8px}
+.season-record small{color:#778297}
+.season-summary{display:grid;grid-template-columns:repeat(3,1fr);background:var(--navy);color:#fff;margin-bottom:22px}
+.season-summary div{padding:22px 24px;border-right:1px solid #ffffff22}
+.season-summary div:last-child{border-right:0}
+.season-summary span{display:block;color:#bcc6d5;font-size:12px;letter-spacing:.12em}
+.season-summary strong{display:block;font-size:30px;margin-top:5px}
+.latest-game{background:#fff;border:1px solid #dfe4eb;padding:26px 28px;margin-bottom:26px;box-shadow:0 8px 24px #1a2a4510}
+.latest-kicker{font-size:11px;letter-spacing:.18em;color:var(--red);font-weight:900;margin-bottom:14px}
+.latest-main{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.latest-main small{display:block;color:#7a8597;margin-bottom:8px}
+.latest-main>div:first-child strong{font-size:24px}
+.latest-score{display:flex;align-items:center;gap:12px}
+.latest-score span{font-size:46px;font-weight:900;line-height:1}
+.latest-score i{font-style:normal;color:#9aa3b0}
+.latest-score b{background:var(--red);color:#fff;font-size:11px;letter-spacing:.12em;padding:7px 9px;margin-left:4px}
+.result-list{background:#fff;border:1px solid #dfe4eb}
+.result-list-title{display:flex;align-items:baseline;gap:12px;padding:18px 22px;border-bottom:1px solid #e3e7ed}
+.result-list-title span{font-size:11px;letter-spacing:.15em;color:#7b8597;font-weight:900}
+.result-list-title strong{font-size:17px}
+.result-row{display:grid;grid-template-columns:120px 1fr 140px;align-items:center;min-height:66px;padding:0 20px;border-bottom:1px solid #edf0f4;position:relative}
+.result-row:last-child{border-bottom:0}
+.result-row:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#b7c0cc}
+.result-row.win:before{background:var(--navy)}
+.result-row.loss:before{background:var(--red)}
+.result-row.draw:before{background:#4b8b42}
+.result-date{font-weight:900;font-size:15px}.result-date small{display:block;color:#7c8798;font-size:11px;font-weight:600;margin-top:3px}
+.result-opponent{font-weight:800}.result-opponent .vs{color:#8b95a4;font-size:11px;letter-spacing:.05em}
+.result-note{display:inline-block;margin-left:10px;padding:3px 6px;background:#eef2f7;color:#41506a;font-size:10px;border-radius:3px;vertical-align:2px}
+.result-score{display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.result-score strong{font-size:22px}.result-score strong span{color:#a0a8b5;margin:0 4px;font-weight:400}
+.result-score b{display:inline-grid;place-items:center;width:28px;height:28px;font-size:12px;color:#fff;background:#8c96a5;border-radius:50%}
+.result-row.win .result-score b{background:var(--navy)}.result-row.loss .result-score b{background:var(--red)}.result-row.draw .result-score b{background:#4b8b42}
+@media(max-width:700px){
+.games-heading{align-items:flex-start}.season-record strong{font-size:27px}.season-record strong span{font-size:13px;margin-right:5px}.season-summary div{padding:17px 14px}.season-summary strong{font-size:24px}
+.latest-game{padding:20px}.latest-main{align-items:flex-end}.latest-main>div:first-child strong{font-size:18px}.latest-score{gap:7px}.latest-score span{font-size:34px}.latest-score b{display:none}
+.result-list{margin-left:-2px;margin-right:-2px}.result-row{grid-template-columns:82px 1fr auto;padding:0 12px;min-height:70px}.result-date{font-size:13px}.result-opponent{font-size:14px;padding-right:8px}.result-note{display:block;width:max-content;margin:5px 0 0}.result-score{gap:6px}.result-score strong{font-size:18px}.result-score b{width:25px;height:25px;font-size:11px}
+}
+
+
+.result-date small em{display:block;font-style:normal;color:#9aa3b0;font-size:10px;margin-top:2px}.official-badge{display:inline-block;margin-left:8px;padding:3px 7px;border:1px solid #e6b800;background:#fff9cf;color:#7a6400;font-size:10px;font-weight:900;border-radius:999px;vertical-align:1px}.result-legend{display:flex;gap:22px;flex-wrap:wrap;margin:-12px 0 18px;color:#69758a;font-size:12px}.result-legend span{display:flex;align-items:center;gap:6px}.official-dot{width:9px;height:9px;border-radius:50%;background:#f0c400;display:inline-block}.result-row.canceled:before{background:#9ba4b2}.result-row.canceled{background:#fafbfc}.result-row.canceled .result-score b{width:auto;height:auto;border-radius:3px;padding:6px 9px;background:#8b95a4}.cancel-note{display:inline-block;margin-left:9px;color:#7a8495;font-size:11px;font-weight:700}@media(max-width:700px){.official-badge{display:block;width:max-content;margin:5px 0 0}.cancel-note{display:block;margin:5px 0 0}.result-legend{gap:8px;margin-top:-10px}.result-legend span{width:100%}}
+
+
+.site-nav a.active{color:var(--red)}
+.page-hero{background:var(--navy);color:#fff;padding:46px 0 40px}
+.page-hero .eyebrow{margin-bottom:10px}
+.page-hero h1{font-size:46px;margin:0 0 10px}
+.page-hero p{margin:0;color:#cbd3df}
+.upcoming-card{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;background:#fff;border:1px solid #dfe4eb;padding:24px 26px;margin:24px 0 30px}
+.upcoming-card .kicker{color:var(--red);font-size:11px;font-weight:900;letter-spacing:.15em}
+.upcoming-card h3{font-size:26px;margin:8px 0 4px}.upcoming-meta{color:#6f7b8f}
+.upcoming-side{display:flex;align-items:center;justify-content:flex-end;text-align:right}
+.upcoming-side strong{font-size:22px}.upcoming-side small{display:block;color:#7b8698;margin-top:5px}
+.recent-list{background:#fff;border:1px solid #dfe4eb;margin-top:18px}
+.home-results{background:#f4f6f9;padding:56px 0}
+.home-results-head{display:flex;align-items:end;justify-content:space-between;gap:20px}
+.home-results .sectiontitle{margin-bottom:0}
+.more-link{font-weight:900;text-underline-offset:5px}
+@media(max-width:700px){
+ .site-nav{position:absolute;top:76px;left:16px;gap:24px;font-size:15px}
+ .page-hero{padding:34px 0}.page-hero h1{font-size:34px}
+ .upcoming-card{grid-template-columns:1fr;padding:20px}.upcoming-side{justify-content:flex-start;text-align:left}
+ .home-results{padding:46px 0}.home-results-head{align-items:flex-start}
+}
+
+
+/* v6 mobile polish: prevent awkward Japanese line breaks */
+@media(max-width:700px){
+  .games-heading{display:block}
+  .games-heading .sectiontitle{white-space:nowrap;font-size:29px;line-height:1.2}
+  .season-record{text-align:left;margin-top:14px}
+  .season-record strong{font-size:28px}
+  .season-record small{display:block;margin-top:4px}
+
+  .home-results .season-summary{
+    grid-template-columns:1fr 1fr;
+  }
+  .home-results .season-summary div:first-child{
+    grid-column:1 / -1;
+    border-right:0;
+    border-bottom:1px solid #ffffff22;
+  }
+  .home-results .season-summary div:nth-child(2){
+    border-right:1px solid #ffffff22;
+  }
+  .home-results .season-summary div:nth-child(3){
+    border-right:0;
+  }
+  .home-results .season-summary div:first-child strong{
+    font-size:27px;
+    white-space:nowrap;
+  }
+
+  .page-hero h1{
+    white-space:nowrap;
+    font-size:33px;
+  }
+
+  .result-list-title{
+    flex-wrap:wrap;
+    row-gap:4px;
+  }
+}
+
+
+.upcoming-list{background:#fff;border:1px solid #dfe4eb;margin:24px 0 30px}
+.upcoming-list-head{padding:16px 22px;border-bottom:1px solid #e3e7ed;font-size:11px;font-weight:900;letter-spacing:.16em;color:var(--red)}
+.upcoming-row{display:grid;grid-template-columns:110px 130px 1fr;gap:18px;align-items:center;padding:18px 22px;border-bottom:1px solid #edf0f4}
+.upcoming-row:last-child{border-bottom:0}
+.upcoming-date{font-size:18px;font-weight:900}.upcoming-date small{display:block;font-size:11px;color:#7b8698;margin-top:3px}
+.upcoming-place{font-weight:800;color:#536076}
+.upcoming-match strong{display:block;font-size:17px}.upcoming-match small{display:block;color:#7b8698;margin-top:5px}
+@media(max-width:700px){
+ .upcoming-row{grid-template-columns:78px 1fr;gap:6px 12px;padding:16px}
+ .upcoming-place{font-size:13px}
+ .upcoming-match{grid-column:2}
+ .upcoming-match strong{font-size:15px}
+}
+
+
+.year-switch{display:flex;gap:10px;margin:0 0 26px}
+.year-switch a{display:inline-flex;align-items:center;justify-content:center;min-width:92px;padding:10px 16px;border:1px solid #cfd6e0;background:#fff;text-decoration:none;font-weight:900}
+.year-switch a.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media(max-width:700px){.year-switch{margin-bottom:22px}.year-switch a{min-width:82px;padding:9px 14px}}
+
+</style>
+</head>
+<body>
+
+<header><div class="wrap head">
+<div class="brand">
+<div class="mark"><img src="dream-sprite-logo.jpg" alt="ドリームスプライト Dロゴ"></div>
+<div><div class="name">ドリームスプライト</div><div class="sub">KEIHAN LEAGUE BASEBALL</div></div>
+</div>
+<nav class="site-nav"><a href="index.html#about">チーム紹介</a><a class="active" href="results.html">日程・結果</a></nav>
+</div></header>
+<main>
+<section class="page-hero"><div class="wrap">
+  <div class="eyebrow">2025 SEASON / GAMES</div>
+  <h1>日程・試合結果</h1>
+  <p>ドリームスプライト 2025年シーズン</p>
+</div></section>
+
+<section class="games"><div class="wrap">
+  <div class="year-switch"><a href="results.html">2026</a><a class="active" href="results-2025.html">2025</a></div>
+  <div class="games-heading">
+    <div><div class="sectiontag">SEASON RECORD</div><h2 class="sectiontitle">2025 試合記録</h2><p class="games-intro">2025年シーズン終了</p></div>
+    <div class="season-record"><strong>7<span>勝</span> 11<span>敗</span></strong><small>18試合</small></div>
+  </div>
+  <div class="result-legend"><span>※ スコアはドリーム得点－相手得点の順で表記</span></div>
+  <div class="season-summary">
+    <div><span>得点</span><strong>108</strong></div>
+    <div><span>失点</span><strong>123</strong></div>
+    <div><span>得失点差</span><strong>-15</strong></div>
+  </div>
+  <div class="result-list">
+    <div class="result-list-title"><span>ALL GAMES</span><strong>2025 全試合記録</strong></div>
+    <div class="result-row loss">
+      <div class="result-date">11月30日<small>毛馬②</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ラッツ</div>
+      <div class="result-score"><strong>4<span>−</span>7</strong><b>負</b></div>
+    </div>
+<div class="result-row win">
+      <div class="result-date">11月24日<small>左専道</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> SHURAKU</div>
+      <div class="result-score"><strong>14<span>−</span>3</strong><b>勝</b></div>
+    </div>
+<div class="result-row loss">
+      <div class="result-date">11月16日<small>太子橋②</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> シャークス</div>
+      <div class="result-score"><strong>3<span>−</span>4</strong><b>負</b></div>
+    </div>
+<div class="result-row loss">
+      <div class="result-date">11月3日<small>今津</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 俺についてこい</div>
+      <div class="result-score"><strong>3<span>−</span>4</strong><b>負</b></div>
+    </div>
+<div class="result-row loss">
+      <div class="result-date">10月19日<small>太子橋①</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ラッツ</div>
+      <div class="result-score"><strong>1<span>−</span>8</strong><b>負</b></div>
+    </div>
+<div class="result-row win">
+      <div class="result-date">10月13日<small>今津</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 俺についてこい</div>
+      <div class="result-score"><strong>8<span>−</span>2</strong><b>勝</b></div>
+    </div>
+<div class="result-row win">
+      <div class="result-date">9月28日<small>木屋元①</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 野球クラブ</div>
+      <div class="result-score"><strong>2<span>−</span>1</strong><b>勝</b></div>
+    </div>
+<div class="result-row loss">
+      <div class="result-date">9月21日<small>大日①</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ラッツ</div>
+      <div class="result-score"><strong>4<span>−</span>8</strong><b>負</b></div>
+    </div>
+<div class="result-row loss">
+      <div class="result-date">9月14日<small>今津</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 俺についてこい</div>
+      <div class="result-score"><strong>7<span>−</span>12</strong><b>負</b></div>
+    </div>
+<div class="result-row win">
+      <div class="result-date">8月31日<small>桃山台</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 北摂ブラックス</div>
+      <div class="result-score"><strong>14<span>−</span>4</strong><b>勝</b></div>
+    </div>
+<div class="result-row win">
+      <div class="result-date">7月27日<small>木屋元①</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ゴールドラッシュ</div>
+      <div class="result-score"><strong>8<span>−</span>4</strong><b>勝</b></div>
+    </div>
+<div class="result-row loss">
+      <div class="result-date">6月1日<small>大日②</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> フェニックス</div>
+      <div class="result-score"><strong>8<span>−</span>9</strong><b>負</b></div>
+    </div>
+<div class="result-row win">
+      <div class="result-date">5月4日<small>大日①</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> アポロ</div>
+      <div class="result-score"><strong>11<span>−</span>5</strong><b>勝</b></div>
+    </div>
+<div class="result-row loss">
+      <div class="result-date">4月27日<small>大日②</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> グランドキャニオン</div>
+      <div class="result-score"><strong>0<span>−</span>8</strong><b>負</b></div>
+    </div>
+<div class="result-row loss">
+      <div class="result-date">4月6日<small>太子橋①</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> マーベラス</div>
+      <div class="result-score"><strong>6<span>−</span>9</strong><b>負</b></div>
+    </div>
+<div class="result-row loss">
+      <div class="result-date">3月9日<small>鳥飼上③</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> 武</div>
+      <div class="result-score"><strong>0<span>−</span>23</strong><b>負</b></div>
+    </div>
+<div class="result-row win">
+      <div class="result-date">2月23日<small>寝屋川A③</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> クーガーズ</div>
+      <div class="result-score"><strong>12<span>−</span>8</strong><b>勝</b></div>
+    </div>
+<div class="result-row loss">
+      <div class="result-date">2月9日<small>寝屋川A②</small></div>
+      <div class="result-opponent"><span class="vs">VS</span> ジョーカー</div>
+      <div class="result-score"><strong>3<span>−</span>4</strong><b>負</b></div>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap"><strong>DREAM SPRITE</strong><br><small>ドリームスプライト / 京阪リーグ</small></div></footer>
+</body></html>
