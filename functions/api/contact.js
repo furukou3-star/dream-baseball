@@ -54,7 +54,7 @@
     const sent = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${env.RESEND_API_KEY}`,
+        "Authorization": `Bearer ${resendKey}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -69,12 +69,12 @@
     if (!sent.ok) {
       const detail = await sent.text();
       console.error("Resend error:", sent.status, detail);
-      return new Response("メール送信に失敗しました。時間をおいてもう一度お試しください。", { status: 502 });
+      return Response.redirect(new URL("/contact.html?error=send", request.url), 303);
     }
 
     return Response.redirect(new URL("/contact-thanks.html", request.url), 303);
   } catch (err) {
     console.error("Contact form error:", err);
-    return new Response("送信中にエラーが発生しました。", { status: 500 });
+    return Response.redirect(new URL("/contact.html?error=send", request.url), 303);
   }
 }
