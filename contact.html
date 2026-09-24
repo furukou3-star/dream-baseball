@@ -23,7 +23,7 @@ nav{display:flex;gap:30px;font-weight:800}nav a{text-decoration:none}.site-nav a
 .info-card{padding:28px}.info-card h2{font-size:22px;margin:0 0 16px}.info-card p{line-height:1.85;color:#586579;margin:0 0 16px}.info-list{margin:24px 0 0;padding:0;list-style:none}.info-list li{padding:13px 0;border-top:1px solid #edf0f4}.info-list strong{display:block;font-size:13px;margin-bottom:4px}.info-list span{color:#68758b;font-size:14px}
 .form-card{padding:30px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{margin-bottom:18px}.field label{display:block;font-weight:900;font-size:14px;margin-bottom:8px}.required{color:var(--red);font-size:11px;margin-left:6px}.field-error{display:none;color:var(--red);font-size:12px;font-weight:800;margin-top:7px}.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--red);background:#fff8f8}.field.invalid .field-error{display:block}.optional{color:#8a95a7;font-size:11px;margin-left:6px;font-weight:700}
 input,select,textarea{width:100%;border:1px solid #cfd6e0;background:#fff;border-radius:0;padding:13px 14px;font:inherit;color:var(--ink);outline:none}input:focus,select:focus,textarea:focus{border-color:#7b879a;box-shadow:0 0 0 3px #111d3210}textarea{min-height:180px;resize:vertical;line-height:1.7}
-.form-note{font-size:12px;color:#7b8698;line-height:1.7;margin:0 0 18px}.submit{border:0;background:var(--red);color:#fff;font-weight:900;font-size:16px;padding:17px 30px;cursor:pointer;width:100%}.submit:hover{filter:brightness(.96)}
+.form-note{font-size:12px;color:#7b8698;line-height:1.7;margin:0 0 18px}.validation-summary{display:none;margin:0 0 14px;padding:13px 14px;border:1px solid var(--red);background:#fff5f6;color:#b51226;font-size:13px;font-weight:900;line-height:1.6}.validation-summary.show{display:block}.submit{border:0;background:var(--red);color:#fff;font-weight:900;font-size:16px;padding:17px 30px;cursor:pointer;width:100%}.submit:hover{filter:brightness(.96)}
 .honey{display:none!important}
 footer{background:var(--navy);color:#fff;padding:32px 0}
 @media(max-width:760px){.wrap{width:calc(100% - 32px)}.head{align-items:flex-start;padding:14px 0 58px}.mark{width:52px;height:52px}.brand{gap:10px}.name{font-size:20px}.sub{font-size:10px;letter-spacing:.15em}nav{position:absolute;top:76px;left:16px;gap:20px;font-size:14px;flex-wrap:wrap}.page-hero{padding:34px 0}.page-hero h1{font-size:34px}.contact-section{padding:42px 0 56px}.contact-grid{grid-template-columns:1fr}.form-card,.info-card{padding:22px}.form-row{grid-template-columns:1fr}}
@@ -63,7 +63,7 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 <div class="field"><label>希望場所<span class="optional">任意</span></label><input type="text" name="希望場所" placeholder="例：大日、佐太西、大阪市内など"></div>
 <div class="field"><label>お問い合わせ内容<span class="required">必須</span></label><textarea name="お問い合わせ内容" required placeholder="対戦希望の場合は、チームレベルや候補日時なども書いていただけるとスムーズです。"></textarea><div class="field-error">お問い合わせ内容を入力してください</div></div>
 <p class="form-note">送信内容はお問い合わせへの返信・連絡のために使用します。</p>
-<button class="submit" type="submit">送信する</button>
+<div id="validationSummary" class="validation-summary" role="alert" aria-live="assertive"></div><button class="submit" type="submit">送信する</button>
 </form>
 </div>
 </div></section>
@@ -72,8 +72,15 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 <script>
 (() => {
   const form = document.getElementById('contactForm');
+  const summary = document.getElementById('validationSummary');
   if (!form) return;
+  form.setAttribute('novalidate', 'novalidate');
   const required = [...form.querySelectorAll('[required]')];
+
+  const labelOf = (el) => {
+    const label = el.closest('.field')?.querySelector('label');
+    return label ? label.childNodes[0].textContent.trim() : '必須項目';
+  };
 
   const validate = (el) => {
     const field = el.closest('.field');
@@ -89,19 +96,37 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
     return ok;
   };
 
+  const clearSummaryIfValid = () => {
+    if (required.every(el => validate(el))) {
+      summary?.classList.remove('show');
+      if (summary) summary.textContent = '';
+    }
+  };
+
   required.forEach(el => {
-    el.addEventListener('input', () => validate(el));
-    el.addEventListener('change', () => validate(el));
+    el.addEventListener('input', () => { validate(el); clearSummaryIfValid(); });
+    el.addEventListener('change', () => { validate(el); clearSummaryIfValid(); });
   });
 
   form.addEventListener('submit', (e) => {
     const invalid = required.filter(el => !validate(el));
-    if (invalid.length) {
-      e.preventDefault();
-      const first = invalid[0];
-      first.focus({preventScroll:true});
-      first.closest('.field')?.scrollIntoView({behavior:'smooth', block:'center'});
+    if (!invalid.length) return;
+
+    e.preventDefault();
+    const names = invalid.map(labelOf);
+    if (summary) {
+      summary.textContent = '未入力の必須項目があります：' + names.join('・');
+      summary.classList.add('show');
+      summary.scrollIntoView({behavior:'smooth', block:'center'});
     }
+
+    // After the message is made visible beside the send button, move to the
+    // first missing field. Delay avoids iOS Safari swallowing the scroll.
+    window.setTimeout(() => {
+      const first = invalid[0];
+      first.closest('.field')?.scrollIntoView({behavior:'smooth', block:'center'});
+      window.setTimeout(() => first.focus({preventScroll:true}), 350);
+    }, 650);
   });
 })();
 </script></body></html>
