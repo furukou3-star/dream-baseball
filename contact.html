@@ -83,12 +83,13 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
   const validate = (el) => {
     const field = el.closest('.field');
     let ok = String(el.value || '').trim() !== '';
-    if (ok && el.type === 'email') ok = el.validity.valid;
+    if (ok && el.type === 'email') ok = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(el.value.trim());
     field?.classList.toggle('invalid', !ok);
     const msg = field?.querySelector('.field-error');
     if (msg && el.type === 'email') {
-      msg.textContent = el.value.trim() && !el.validity.valid
-        ? 'メールアドレスの形式を確認してください'
+      const emailOk = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(el.value.trim());
+      msg.textContent = el.value.trim() && !emailOk
+        ? 'メールアドレスの形式を確認してください（例：name@example.com）'
         : 'メールアドレスを入力してください';
     }
     return ok;
