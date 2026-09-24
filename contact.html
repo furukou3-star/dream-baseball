@@ -23,7 +23,7 @@ nav{display:flex;gap:30px;font-weight:800}nav a{text-decoration:none}.site-nav a
 .info-card{padding:28px}.info-card h2{font-size:22px;margin:0 0 16px}.info-card p{line-height:1.85;color:#586579;margin:0 0 16px}.info-list{margin:24px 0 0;padding:0;list-style:none}.info-list li{padding:13px 0;border-top:1px solid #edf0f4}.info-list strong{display:block;font-size:13px;margin-bottom:4px}.info-list span{color:#68758b;font-size:14px}
 .form-card{padding:30px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{margin-bottom:18px}.field label{display:block;font-weight:900;font-size:14px;margin-bottom:8px}.required{color:var(--red);font-size:11px;margin-left:6px}.field-error{display:none;color:var(--red);font-size:12px;font-weight:800;margin-top:7px}.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--red);background:#fff8f8}.field.invalid .field-error{display:block}.optional{color:#8a95a7;font-size:11px;margin-left:6px;font-weight:700}
 input,select,textarea{width:100%;border:1px solid #cfd6e0;background:#fff;border-radius:0;padding:13px 14px;font:inherit;color:var(--ink);outline:none}input:focus,select:focus,textarea:focus{border-color:#7b879a;box-shadow:0 0 0 3px #111d3210}textarea{min-height:180px;resize:vertical;line-height:1.7}
-.form-note{font-size:12px;color:#7b8698;line-height:1.7;margin:0 0 18px}.validation-summary{display:none;margin:0 0 14px;padding:13px 14px;border:1px solid var(--red);background:#fff5f6;color:#b51226;font-size:13px;font-weight:900;line-height:1.6}.validation-summary.show{display:block}.submit{border:0;background:var(--red);color:#fff;font-weight:900;font-size:16px;padding:17px 30px;cursor:pointer;width:100%}.submit:hover{filter:brightness(.96)}
+.form-note{font-size:12px;color:#7b8698;line-height:1.7;margin:0 0 18px}.validation-summary{display:none;margin:0 0 14px;padding:13px 14px;border:1px solid var(--red);background:#fff5f6;color:#b51226;font-size:13px;font-weight:900;line-height:1.6}.validation-summary.show{display:block}.validation-toast{display:none;position:fixed;z-index:9999;left:16px;right:16px;top:18px;max-width:620px;margin:auto;padding:14px 16px;background:#fff;border:2px solid var(--red);box-shadow:0 8px 30px #0004;color:#b51226;font-size:14px;font-weight:900;line-height:1.5}.validation-toast.show{display:block}.submit{border:0;background:var(--red);color:#fff;font-weight:900;font-size:16px;padding:17px 30px;cursor:pointer;width:100%}.submit:hover{filter:brightness(.96)}
 .honey{display:none!important}
 footer{background:var(--navy);color:#fff;padding:32px 0}
 @media(max-width:760px){.wrap{width:calc(100% - 32px)}.head{align-items:flex-start;padding:14px 0 58px}.mark{width:52px;height:52px}.brand{gap:10px}.name{font-size:20px}.sub{font-size:10px;letter-spacing:.15em}nav{position:absolute;top:76px;left:16px;gap:20px;font-size:14px;flex-wrap:wrap}.page-hero{padding:34px 0}.page-hero h1{font-size:34px}.contact-section{padding:42px 0 56px}.contact-grid{grid-template-columns:1fr}.form-card,.info-card{padding:22px}.form-row{grid-template-columns:1fr}}
@@ -34,6 +34,7 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 <a class="brand" href="index.html"><div class="mark"><img src="dream-sprite-logo.jpg" alt="ドリームスプライト Dロゴ"></div><div><div class="name">ドリームスプライト</div><div class="sub">KEIHAN LEAGUE BASEBALL</div></div></a>
 <nav class="site-nav"><a href="index.html#about">チーム紹介</a><a href="results.html">日程・結果</a><a class="active" href="contact.html">お問い合わせ</a></nav>
 </div></header>
+<div id="validationToast" class="validation-toast" role="alert" aria-live="assertive"></div>
 <main>
 <section class="page-hero"><div class="wrap"><div class="eyebrow">CONTACT</div><h1>お問い合わせ</h1><p>対戦希望、チームに関するご相談・お問い合わせはこちらからどうぞ。</p></div></section>
 <section class="contact-section"><div class="wrap contact-grid">
@@ -73,39 +74,36 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 (() => {
   const form = document.getElementById('contactForm');
   const summary = document.getElementById('validationSummary');
+  const toast = document.getElementById('validationToast');
   if (!form) return;
-  form.setAttribute('novalidate', 'novalidate');
-  const required = [...form.querySelectorAll('[required]')];
 
-  const labelOf = (el) => {
-    const label = el.closest('.field')?.querySelector('label');
-    return label ? label.childNodes[0].textContent.trim() : '必須項目';
-  };
+  const required = [...form.querySelectorAll('[required]')];
+  const labelOf = (el) => el.closest('.field')?.querySelector('label')?.childNodes[0]?.textContent.trim() || '必須項目';
 
   const validate = (el) => {
     const field = el.closest('.field');
-    let ok = el.value.trim() !== '';
+    let ok = String(el.value || '').trim() !== '';
     if (ok && el.type === 'email') ok = el.validity.valid;
     field?.classList.toggle('invalid', !ok);
     const msg = field?.querySelector('.field-error');
-    if (msg && el.type === 'email' && el.value.trim() && !el.validity.valid) {
-      msg.textContent = 'メールアドレスの形式を確認してください';
-    } else if (msg && el.name === 'email') {
-      msg.textContent = 'メールアドレスを入力してください';
+    if (msg && el.type === 'email') {
+      msg.textContent = el.value.trim() && !el.validity.valid
+        ? 'メールアドレスの形式を確認してください'
+        : 'メールアドレスを入力してください';
     }
     return ok;
   };
 
-  const clearSummaryIfValid = () => {
-    if (required.every(el => validate(el))) {
+  const hideNotices = () => {
+    if (required.every(validate)) {
       summary?.classList.remove('show');
-      if (summary) summary.textContent = '';
+      toast?.classList.remove('show');
     }
   };
 
   required.forEach(el => {
-    el.addEventListener('input', () => { validate(el); clearSummaryIfValid(); });
-    el.addEventListener('change', () => { validate(el); clearSummaryIfValid(); });
+    el.addEventListener('input', () => { validate(el); hideNotices(); });
+    el.addEventListener('change', () => { validate(el); hideNotices(); });
   });
 
   form.addEventListener('submit', (e) => {
@@ -113,20 +111,36 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
     if (!invalid.length) return;
 
     e.preventDefault();
+    const first = invalid[0];
     const names = invalid.map(labelOf);
+    const message = '未入力の必須項目があります：' + names.join('・');
+
     if (summary) {
-      summary.textContent = '未入力の必須項目があります：' + names.join('・');
+      summary.textContent = message;
       summary.classList.add('show');
-      summary.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+    if (toast) {
+      toast.textContent = message;
+      toast.classList.add('show');
     }
 
-    // After the message is made visible beside the send button, move to the
-    // first missing field. Delay avoids iOS Safari swallowing the scroll.
+    // Move immediately to the first missing field. This also works for <select> on iOS.
+    first.closest('.field')?.scrollIntoView({behavior:'smooth', block:'center'});
     window.setTimeout(() => {
-      const first = invalid[0];
-      first.closest('.field')?.scrollIntoView({behavior:'smooth', block:'center'});
-      window.setTimeout(() => first.focus({preventScroll:true}), 350);
-    }, 650);
+      if (first.tagName !== 'SELECT') first.focus({preventScroll:true});
+    }, 450);
   });
+
+  const error = new URLSearchParams(location.search).get('error');
+  if (error) {
+    const msg = error === 'config'
+      ? '現在お問い合わせを送信できません。メール送信設定を確認しています。'
+      : '送信できませんでした。時間をおいてもう一度お試しください。';
+    if (summary) {
+      summary.textContent = msg;
+      summary.classList.add('show');
+      summary.scrollIntoView({block:'center'});
+    }
+  }
 })();
 </script></body></html>
