@@ -1,4 +1,4 @@
-export async function onRequestPost(context) {
+// Resend API key is provided via Cloudflare secret.\nexport async function onRequestPost(context) {
   const { request, env } = context;
 
   try {
