@@ -29,8 +29,9 @@ export async function onRequestPost(context) {
         date.length > 30 || time.length > 50 || place.length > 200 || message.length > 5000) {
       return new Response("入力内容が長すぎます。", { status: 400 });
     }
-    if (!env.RESEND_API_KEY) {
-      return new Response("メール送信設定が未完了です。", { status: 500 });
+    const resendKey = env.RESEND_API_KEY;
+    if (!resendKey) {
+      return Response.redirect(new URL("/contact.html?error=config", request.url), 303);
     }
 
     const esc = (s) => s.replace(/[&<>"']/g, c => ({
