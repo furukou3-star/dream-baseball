@@ -1,4 +1,5 @@
-// Resend API key is provided via Cloudflare secret. Redeploy after secret configuration.\nexport async function onRequestPost(context) {
+// Resend API key is provided via Cloudflare secret. Redeploy after secret configuration.
+export async function onRequestPost(context) {
   const { request, env } = context;
 
   try {
