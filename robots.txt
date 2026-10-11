@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /keihan/
+
+Sitemap: https://dream-sprite.pages.dev/sitemap.xml
