@@ -159,7 +159,9 @@ footer{background:var(--navy);color:#fff;padding:32px 0}
 .upcoming-place{font-weight:800;color:#536076}
 .upcoming-match strong{display:block;font-size:17px}.upcoming-match small{display:block;color:#7b8698;margin-top:5px}
 @media(max-width:700px){
- .upcoming-row{grid-template-columns:78px 1fr;gap:6px 12px;padding:16px}
+ .upcoming-row{grid-template-columns:110px minmax(0,1fr);gap:6px 12px;padding:16px}
+ .upcoming-date{white-space:nowrap}
+ .upcoming-date small{white-space:normal}
  .upcoming-place{font-size:13px}
  .upcoming-match{grid-column:2}
  .upcoming-match strong{font-size:15px}
